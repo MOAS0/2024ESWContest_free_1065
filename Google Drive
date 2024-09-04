@@ -1,0 +1,14 @@
+sudo apt install rclone
+rclone config
+rclone mount remote_name: ~/path_to_mount
+fusermount -u ~/path_to_mount
+#오류가 날 경우
+rclone config
+rclone mount mydrive: ~/path_to_mount
+mkdir -p ~/path_to_mount
+# 다른 경로
+mkdir -p ~/gdrive
+rclone mount 'Google Drive:/' ~/gdrive
+ls ~/gdrive # 마운트 확인
+fusermount -u ~/gdrive #마운트 해제
+rclone mount 'Google Drive:/' ~/gdrive # 직접 명령어로 마운트
